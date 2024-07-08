@@ -19,6 +19,7 @@ runtimes:
 # cf. https://docs.trunk.io/check/configuration)
 lint:
   enabled:
+    - cspell@8.10.1
     - checkov@3.2.174
     - git-diff-check
     - markdownlint@0.41.0
