@@ -1,4 +1,4 @@
-# cf. https://cspell.org/docs/getting-started/
+# cf. https://docs.trunk.io/check/configuration/supported/cspell
 version: "0.2"
 ignorePaths: []
 dictionaryDefinitions:

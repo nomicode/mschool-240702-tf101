@@ -1,4 +1,4 @@
-# cf. https://trunk.io/linters/yaml/yamllint
+# cf. https://docs.trunk.io/check/configuration/supported/yamllint
 rules:
   quoted-strings:
     required: only-when-needed
