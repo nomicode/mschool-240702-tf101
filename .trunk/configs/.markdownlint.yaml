@@ -1,2 +1,0 @@
-# cf. https://trunk.io/linters/markdown/markdownlint
-extends: markdownlint/style/prettier

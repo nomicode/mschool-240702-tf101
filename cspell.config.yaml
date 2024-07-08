@@ -1,0 +1,12 @@
+# cf. https://docs.trunk.io/check/configuration/supported/cspell
+version: '0.2'
+dictionaryDefinitions:
+  - name: custom-dictionary
+    path: ./.cspell/custom-dictionary.txt
+    addWords: true
+dictionaries:
+  - custom-dictionary
+ignorePaths:
+  - ./.cspell/custom-dictionary.txt
+ignoreWords: []
+import: []

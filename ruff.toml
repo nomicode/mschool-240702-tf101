@@ -1,0 +1,6 @@
+# Generic, formatter-friendly config
+select = ["B", "D3", "E", "F"]
+
+ignore = [
+  "E501", # Line length should be handled by formatters
+]

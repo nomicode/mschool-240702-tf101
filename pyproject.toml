@@ -1,0 +1,6 @@
+[tool.black]
+line-length = 79
+
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = ["import-outside-toplevel", "invalid-name", "missing-docstring"]

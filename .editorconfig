@@ -11,3 +11,10 @@ trim_trailing_whitespace = true
 
 [*.md]
 line_length=off
+
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[*.{py,sh}]
+indent_size = 4
