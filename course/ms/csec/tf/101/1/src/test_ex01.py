@@ -40,6 +40,6 @@ def test_age():
         age(2000.1)
 
 
-# Print example output text
+# Print example output
 text = age(1983)
 print(text)
