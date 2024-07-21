@@ -1,2 +1,9 @@
-# cf. https://cspell.org/docs/dictionaries-custom/
 markdownlint
+Masterschool
+mschool
+pycache
+pylint
+pytest
+sourcery
+toplevel
+venv
