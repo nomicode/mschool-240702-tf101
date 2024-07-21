@@ -1,9 +1,12 @@
+direnv
 markdownlint
 Masterschool
 mschool
 pycache
 pylint
 pytest
+PYTHONPATH
+shellcheck
 sourcery
 toplevel
 venv

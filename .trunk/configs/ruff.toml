@@ -1,5 +1,0 @@
-# Generic, formatter-friendly config
-select = ["B", "D3", "E", "F"]
-
-# Never enforce line length violations; this should be handled by formatters
-ignore = ["E501"]
