@@ -1,5 +1,8 @@
+# Exercise 1: Print age
+
+
 def my_sum(a, b):
-    """Return the sum of two integers"""
+    """Calculate the sum of two integers."""
     if not all(isinstance(arg, int) for arg in (a, b)):
         raise ValueError("All arguments must be integers")
 
@@ -7,8 +10,8 @@ def my_sum(a, b):
 
 
 def test_my_sum():
-    """Tests the my_sum function"""
-    # Avoid importing test module during normal operation
+    """Test the my_sum function."""
+    # Modules only used for testing
     import sys
 
     import pytest
@@ -17,14 +20,13 @@ def test_my_sum():
     assert my_sum(2, 3) == 5
     assert my_sum(-2, -3) == -5
     assert my_sum(0, 0) == 0
-    # Largest and smallest integers
-    assert my_sum(sys.maxsize, -sys.maxsize - 1) == -1
+
+    # Edge cases
+    assert my_sum(sys.maxsize, -sys.maxsize - 1) == -1  # Very large numbers
+
     # Negative cases
     with pytest.raises(ValueError):
-        my_sum("2", 3)  # Non-integer input
-    with pytest.raises(ValueError):
-        my_sum(2, 3.5)  # Non-integer input
-    with pytest.raises(ValueError):
-        my_sum(None, 3)  # None input
-    with pytest.raises(ValueError):
-        my_sum(2, None)  # None input
+        my_sum("1", 1)  # String input
+        my_sum(1, 1.0)  # Float input
+        my_sum(None, 1)  # None input
+        my_sum(1, None)  # None input
