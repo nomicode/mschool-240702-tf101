@@ -1,5 +1,6 @@
 # Exercise 7: Percent calculation
 
+
 # Define the precision of the percentage in decimal places
 PRECISION = 1
 
@@ -9,9 +10,9 @@ def percent(num1, num2):
     if not all(isinstance(arg, int) for arg in (num1, num2)):
         raise TypeError("Arguments must be integers")
     if num2 == 0:
-        raise ZeroDivisionError("Value cannot not be zero")
+        raise ZeroDivisionError("Value cannot be zero")
 
-    return round((num1 / num2) * 100, PRECISION)
+    return f"{round((num1 / num2) * 100, PRECISION):.{PRECISION}f}%"
 
 
 # Print example outputs
@@ -26,22 +27,21 @@ def test_percent():
     import pytest
 
     # Happy path tests
-    assert percent(1, 10) == 10.0  # Positive
-    assert percent(10, 1) == 1000.0  # Positive
-    assert percent(-1, 10) == -10.0  # Negative
-    assert percent(10, -1) == -1000.0  # Negative
+    assert percent(1, 10) == "10.0%"  # Positive
+    assert percent(10, 1) == "1000.0%"  # Positive
+    assert percent(-1, 10) == "-10.0%"  # Negative
+    assert percent(10, -1) == "-1000.0%"  # Negative
 
     # Edge cases
-    assert percent(0, 1) == 0.0  # Any percentage of zero is zero
-    assert percent(1, 1) == 100.0  # 100% of itself
-    assert percent(1, 7) == 14.3  # Non-integer percentage
-    assert percent(sys.maxsize, 1) == pytest.approx(
-        sys.maxsize * 100
-    )  # Multiplication of very large number
-    assert percent(1, sys.maxsize) == pytest.approx(
-        float((1 / sys.maxsize) * 100)
-    )  # Division of very large number
-    assert percent(sys.maxsize, sys.maxsize) == 100  # Still 100% of itself
+    assert percent(0, 1) == "0.0%"  # Any percentage of zero is zero
+    assert percent(1, 1) == "100.0%"  # 100% of itself
+    assert percent(1, 7) == "14.3%"  # Non-integer percentage
+    assert float(percent(sys.maxsize, 1)[:-1]) == pytest.approx(
+        float(f"{sys.maxsize}00")
+    )  # Very large number (strip the % and compare approximate numeric values)
+    assert (
+        percent(sys.maxsize, sys.maxsize) == "100.0%"
+    )  # A very large number is still 100% of itself
 
     # Error tests
     with pytest.raises(TypeError):

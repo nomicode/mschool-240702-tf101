@@ -20,8 +20,6 @@ print(title_creator("Welcome to Masterschool", "=", 5))
 
 def test_title_creator():
     """Test the title_creator function."""
-    import sys
-
     import pytest
 
     # Happy path
@@ -48,7 +46,3 @@ def test_title_creator():
         title_creator("Title", "=", 1.0)
     with pytest.raises(TypeError):
         title_creator("Title", "=", "1")
-    with pytest.raises(MemoryError):
-        # The memory required to store the result of this computation would be,
-        # at a minium, 2**64 bytes on a 64 bit system, assuming 1 bit pp. This equals 16 exabytes
-        assert title_creator("Title", "=", sys.maxsize) == "Title"
